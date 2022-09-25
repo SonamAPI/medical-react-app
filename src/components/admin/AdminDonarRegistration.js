@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 
 export default class AdminDonarRegistration extends Component {
@@ -15,7 +14,7 @@ export default class AdminDonarRegistration extends Component {
       contact: "",
       age: "",
       bloodGroup: "",
-      role: "Admin"
+      role: "Donar"
     }
   }
 
@@ -68,7 +67,7 @@ export default class AdminDonarRegistration extends Component {
     this.setState({
       gender: e.target.value
     });
-  }  submitForm(e) {
+  } submitForm(e) {
     e.preventDefault();
     let hospitalObject = {
       fullName: this.state.fullName,
@@ -82,23 +81,22 @@ export default class AdminDonarRegistration extends Component {
       role: this.state.role,
       yearofest: 0,
       membername: "",
-      regNo:""
+      regNo: ""
     }
 
     console.log(hospitalObject);
     APICalls.createUser(hospitalObject).then(
-      (res)=>
-      window.location = '/registerSuccess'
+      (res) =>
+        window.location = '/registerSuccess'
 
     )
-  }
-  cancelBtn(e){
+  } cancelBtn(e) {
     e.preventDefault();
     window.location = '/login'
   }
   render() {
 
-   
+
     const genders = ["Male", "Female"]
 
     return (
@@ -106,7 +104,7 @@ export default class AdminDonarRegistration extends Component {
         <br></br>
         <div className="container">
           <div className="row">
-            <h4 className='text-center'>Admin Registration</h4><br></br>
+            <h4 className='text-center'>Donar Registration</h4><br></br>
             <div className="card col-md-6 offset-md-3 offset-md-3">
 
               <div className="card-body">
@@ -173,14 +171,12 @@ export default class AdminDonarRegistration extends Component {
 
 
                   <button className="btn btn-outline-primary" style={{ marginLeft: "100px" }} onClick={this.submitForm.bind(this)}>Save</button>
-                  <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }}  onClick={this.cancelBtn.bind(this)}>Cancel</button>
+                  <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }} onClick={this.cancelBtn.bind(this)}>Cancel</button>
                 </form>
               </div>
             </div>
           </div>
         </div >
-
-        <Link to="adminDashboard">Back</Link>
       </div >
     )
   }

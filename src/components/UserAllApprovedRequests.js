@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import APICalls from '../services/APICalls';
-import Navigations from './Navigations';
+import APICalls from '../../services/APICalls';
+import Navigations from '../Navigations';
 
 
 class AllApprovedRequests extends Component {

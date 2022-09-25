@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 
-export default class AdminDonarRegistration extends Component {
+export default class AdminUserRegistration extends Component {
   constructor(props) {
     super(props)
 
@@ -15,7 +14,7 @@ export default class AdminDonarRegistration extends Component {
       contact: "",
       age: "",
       bloodGroup: "",
-      role: "Admin"
+      role: ""
     }
   }
 
@@ -68,9 +67,10 @@ export default class AdminDonarRegistration extends Component {
     this.setState({
       gender: e.target.value
     });
-  }  submitForm(e) {
+  }  
+  submitForm(e) {
     e.preventDefault();
-    let hospitalObject = {
+    let userObject = {
       fullName: this.state.fullName,
       mail: this.state.mail,
       userAddress: this.state.userAddress,
@@ -85,20 +85,21 @@ export default class AdminDonarRegistration extends Component {
       regNo:""
     }
 
-    console.log(hospitalObject);
-    APICalls.createUser(hospitalObject).then(
+    console.log(userObject);
+    APICalls.createUser(userObject).then(
       (res)=>
+    
       window.location = '/registerSuccess'
-
     )
   }
+
   cancelBtn(e){
     e.preventDefault();
     window.location = '/login'
   }
   render() {
 
-   
+    const roles = ["user", "admin","NGO","Donar","Hospital"]
     const genders = ["Male", "Female"]
 
     return (
@@ -106,7 +107,7 @@ export default class AdminDonarRegistration extends Component {
         <br></br>
         <div className="container">
           <div className="row">
-            <h4 className='text-center'>Admin Registration</h4><br></br>
+            <h4 className='text-center'>User Registration</h4><br></br>
             <div className="card col-md-6 offset-md-3 offset-md-3">
 
               <div className="card-body">
@@ -168,7 +169,17 @@ export default class AdminDonarRegistration extends Component {
 
                   <div className="form-group">
                     <label> Role </label>
-                    <input placeholder="role" name="role" className="form-control" value={this.state.role} onChange={this.roleChange.bind(this)} />
+                    {roles.map(
+                      (myRole, index) => {
+                        return <div className="form-check" key={index}>
+                          <input className="form-check-input" type="radio" name="role"  value={myRole} onChange={this.roleChange.bind(this)} />
+                          <label className="form-check-label" htmlFor="role">
+                            {myRole}
+                          </label>
+                        </div>
+                      }
+                    )
+                    }
                   </div><br></br>
 
 
@@ -178,9 +189,10 @@ export default class AdminDonarRegistration extends Component {
               </div>
             </div>
           </div>
+          <br></br>
+          <br></br>
+          <br></br>
         </div >
-
-        <Link to="adminDashboard">Back</Link>
       </div >
     )
   }

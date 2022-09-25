@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 
-export default class AdminDonarRegistration extends Component {
+export default class AdminHospitalRegistration extends Component {
   constructor(props) {
     super(props)
 
@@ -15,7 +14,7 @@ export default class AdminDonarRegistration extends Component {
       contact: "",
       age: "",
       bloodGroup: "",
-      role: "Admin"
+      role: "Hospital"
     }
   }
 
@@ -68,37 +67,36 @@ export default class AdminDonarRegistration extends Component {
     this.setState({
       gender: e.target.value
     });
-  }  submitForm(e) {
+  } submitForm(e) {
     e.preventDefault();
     let hospitalObject = {
       fullName: this.state.fullName,
       mail: this.state.mail,
       userAddress: this.state.userAddress,
       password: this.state.password,
-      gender: this.state.gender,
+      gender: "",
       contact: this.state.contact,
-      age: this.state.age,
-      bloodGroup: this.state.bloodGroup,
+      age: 0,
+      bloodGroup: "",
       role: this.state.role,
       yearofest: 0,
       membername: "",
-      regNo:""
+      regNo: ""
     }
 
     console.log(hospitalObject);
     APICalls.createUser(hospitalObject).then(
-      (res)=>
+      (res) =>
       window.location = '/registerSuccess'
 
     )
-  }
-  cancelBtn(e){
+  }cancelBtn(e){
     e.preventDefault();
     window.location = '/login'
   }
   render() {
 
-   
+
     const genders = ["Male", "Female"]
 
     return (
@@ -106,7 +104,7 @@ export default class AdminDonarRegistration extends Component {
         <br></br>
         <div className="container">
           <div className="row">
-            <h4 className='text-center'>Admin Registration</h4><br></br>
+            <h4 className='text-center'>Hospital Registration</h4><br></br>
             <div className="card col-md-6 offset-md-3 offset-md-3">
 
               <div className="card-body">
@@ -120,10 +118,7 @@ export default class AdminDonarRegistration extends Component {
                     <label> Mail: </label>
                     <input placeholder="Email" name="mail" className="form-control" value={this.state.mail} onChange={this.mailChange.bind(this)} />
                   </div><br></br>
-                  <div className="form-group">
-                    <label> Age: </label>
-                    <input placeholder="age" name="age" className="form-control" value={this.state.age} onChange={this.ageChange.bind(this)} />
-                  </div><br></br>
+
                   <div className="form-group">
                     <label> Address: </label>
                     <input placeholder="Address" name="userAddress" className="form-control" value={this.state.userAddress} onChange={this.userAddressChange.bind(this)} />
@@ -133,20 +128,7 @@ export default class AdminDonarRegistration extends Component {
                     <input type="password" placeholder="Password" name="password" className="form-control" value={this.state.password} onChange={this.passwordChange.bind(this)} />
                   </div><br></br>
 
-                  <div className="form-group">
-                    <label> Gender: </label>
-                    {genders.map(
-                      (myGender, index) => {
-                        return <div className="form-check" key={index}>
-                          <input className="form-check-input" type="radio" name="gender" value={myGender} onChange={this.genderChange.bind(this)} />
-                          <label className="form-check-label" htmlFor="gender">
-                            {myGender}
-                          </label>
-                        </div>
-                      }
-                    )
-                    }
-                  </div><br></br>
+                  <br></br>
                   <div className="form-group">
                     <label> Contact: </label>
                     <input placeholder="Contact" name="contact" className="form-control" value={this.state.contact} onChange={this.contactChange.bind(this)} />
@@ -179,8 +161,6 @@ export default class AdminDonarRegistration extends Component {
             </div>
           </div>
         </div >
-
-        <Link to="adminDashboard">Back</Link>
       </div >
     )
   }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import APICalls from '../services/APICalls';
 import Navigations from './Navigations';
 
-class AllRequests extends Component {
+class AdminAllRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -170,4 +170,4 @@ class AllRequests extends Component {
     )
   }
 }
-export default AllRequests
+export default AdminAllRequests

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 
-export default class AdminDonarRegistration extends Component {
+export default class AdminRegistration extends Component {
   constructor(props) {
     super(props)
 

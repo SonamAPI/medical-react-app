@@ -3,7 +3,7 @@ import APICalls from '../services/APICalls';
 import ErrorPage from '../components/ErrorPage'; 
 import DashBoard from './DashBoardUser';
 import DashBoardUser from './DashBoardUser';
-import DashBoardAdmin from './DashBoardAdmin';
+import DashBoardAdmin from './admin/AdminDashboard';
 import UserProvider from './ConstantClass';
 
 export default class LoginComponent extends Component {
