@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../Navigations';
 
-class AdminAllPendingRequests extends Component {
+
+
+class DonarAllCreatedRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -12,7 +14,7 @@ class AdminAllPendingRequests extends Component {
       selectedMedicineID: "",
       reqRaiseFlag: false,
       showTableFlag: false,
-      roleForMedicineList: 'hospital',
+      roleForMedicineList: 'Donarpital',
       roleForPendingRequest: 'donor',
       id: '',
       medicineName: "",
@@ -26,7 +28,7 @@ class AdminAllPendingRequests extends Component {
     }
   }
   componentDidMount() {
-    APICalls.getPendingRequest().then(
+    APICalls.getCreatedRequest().then(
       (resp) => {
         this.setState({
           medicineList: resp.data
@@ -106,9 +108,9 @@ class AdminAllPendingRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+      
         <br></br>
-        <h2>Approved Request</h2>
+        <h2>Created Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>
           <table className='table table-striped table-bordered'>
             <thead>
@@ -144,10 +146,10 @@ class AdminAllPendingRequests extends Component {
             </tbody>
           </table>
 
-          <Link to='/adminDashboard'>Back</Link>
+          <Link to='/DonarDashboard'>Back</Link>
         </div>
       </div>
     )
   }
 }
-export default AdminAllPendingRequests
+export default DonarAllCreatedRequests

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../Navigations';
 
-class AdminAllPendingRequests extends Component {
+
+class UserAllApprovedRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -12,7 +13,7 @@ class AdminAllPendingRequests extends Component {
       selectedMedicineID: "",
       reqRaiseFlag: false,
       showTableFlag: false,
-      roleForMedicineList: 'hospital',
+      roleForMedicineList: 'Userpital',
       roleForPendingRequest: 'donor',
       id: '',
       medicineName: "",
@@ -26,7 +27,7 @@ class AdminAllPendingRequests extends Component {
     }
   }
   componentDidMount() {
-    APICalls.getPendingRequest().then(
+    APICalls.getAllApprovedRequest().then(
       (resp) => {
         this.setState({
           medicineList: resp.data
@@ -102,6 +103,11 @@ class AdminAllPendingRequests extends Component {
 
     window.location = '/all-request';
   }
+
+
+  backButton(){
+   
+  }
   render() {
     const statusList = ["aa", "dd", "ff"]
     return (
@@ -144,10 +150,10 @@ class AdminAllPendingRequests extends Component {
             </tbody>
           </table>
 
-          <Link to='/adminDashboard'>Back</Link>
+          <Link to='/UserDashboard'>Back</Link>
         </div>
       </div>
     )
   }
 }
-export default AdminAllPendingRequests
+export default UserAllApprovedRequests

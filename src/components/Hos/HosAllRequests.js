@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../Navigations';
 
-class AdminAllRequests extends Component {
+class HosAllRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -129,8 +129,8 @@ class AdminAllRequests extends Component {
                   <th> Quantity</th>
                   <th> Role</th>
                   <th> Current status</th>
-                  <th> Status</th>
-                  <th> Change Status</th>
+                 
+              
                 </tr>
               </thead>
               <tbody>
@@ -146,22 +146,14 @@ class AdminAllRequests extends Component {
                         <td> {med.medicineQuantity}</td>
                         <td> {med.role}</td>
                         <td> {med.status}</td>
-                        <td><select id='options' onChange={this.changeRequestStatus.bind(this)}>
-                          <option value="Created" selected>Created</option>
-                          <option value="Approved">Approved</option>
-                          <option value="Declined">Declined</option>
-                          <option value="Pending">Pending</option>
-                        </select></td>
-
-                        <td>
-                          <button onClick={() => this.changeStatus(med.raiseRequestmedId)} className="btn btn-info">Change Status </button></td>
+                      
                       </tr>
                   )
                 }
               </tbody>
             </table>
 
-            <Link to='/adminDashboard'>Back</Link>
+            <Link to='/HosDashboard'>Back</Link>
           </div>
 
         </div>
@@ -170,4 +162,4 @@ class AdminAllRequests extends Component {
     )
   }
 }
-export default AdminAllRequests
+export default HosAllRequests

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navigations from '../Navigations';
 
-class AdminDashboard extends Component {
+class NGODashboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -11,42 +11,40 @@ class AdminDashboard extends Component {
         }
     }
 
+    raiseRequst() {
+        window.location = '/NGO-raise-request';
+    }
 
+  
+
+    createNGO(){
+        window.location = '/NGO-createNGO';
+
+    }
     showAllList() {
         this.setState({
-            role: "admin",
+            role: "NGO",
             flag: true
         })
-        window.location = '/admin-all-requests';
+        window.location = '/NGO-all-requests';
     }
     showApprovedList() {
-        window.location = '/admin-all-approved-req';
+        window.location = '/NGO-all-approved-req';
     }
     showPendingList() {
-        window.location = '/admin-all-pending-req';
+        window.location = '/NGO-all-pending-req';
     }
     showDeclinedList() {
-        window.location = '/admin-all-declined-req';
+        window.location = '/NGO-all-declined-req';
     }
     showCreatedList() {
-        window.location = '/admin-all-created-req';
+        window.location = '/NGO-all-created-req';
     }
 
-    createUser() {
-        window.location = '/admin-createUser';
-    }
-    createHospital() {
-        window.location = '/admin-createHospital';
-    }
-    createNGO() {
-        window.location = '/createNGO';
-    }
-    createDonar() {
-        window.location = '/admin-createDonar';
-    }
-    createAdmin() {
-        window.location = '/admin-createAdmin';
-    }
+
+    
+
+
 
 
     render() {
@@ -58,7 +56,7 @@ class AdminDashboard extends Component {
 
 
 
-                    <h1 className="display-3 text-center">ADMIN DASHBOARD</h1>
+                    <h1 className="display-3 text-center">NGO DASHBOARD</h1>
 
 
                     <br></br><br></br><br></br>
@@ -136,22 +134,7 @@ class AdminDashboard extends Component {
                                     </th>
                                 </tr><tr>
                                 </tr>
-
-                                {/* Registraion cards */}
-                                <tr className='text-center'>
-                                    <th scope="col">
-                                        <div className="card bg-light text-secondary" style={{
-                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                            "padding": "16px",
-                                            "textAlign": "center",
-                                            "backgroundColor": " #f1f1f1",
-                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                        }} onClick={this.createUser.bind(this)}>
-                                            <h3>Create User</h3>
-                                            <p>Create A New User</p>
-
-                                        </div>
-                                    </th>
+                                <tr>
                                     <th scope="col">
                                         <div className="card bg-light text-primary" style={{
                                             "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
@@ -165,46 +148,22 @@ class AdminDashboard extends Component {
 
                                         </div>
                                     </th>
-                                    <th scope="col">
-                                        <div className="card bg-light text-success" style={{
-                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                            "padding": "16px",
-                                            "textAlign": "center",
-                                            "backgroundColor": " #f1f1f1",
-                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                        }} onClick={this.createHospital.bind(this)}>
-                                            <h3>Create Hospital</h3>
-                                            <p>Create New Hospital</p>
 
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div className="card bg-light text-warming" style={{
-                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                            "padding": "16px",
-                                            "textAlign": "center",
-                                            "backgroundColor": " #f1f1f1",
-                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                        }} onClick={this.createDonar.bind(this)}>
-                                            <h3>Create Donar</h3>
-                                            <p>Create New Donar</p>
-
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div className="card bg-light text-danger" style={{
-                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                            "padding": "16px",
-                                            "textAlign": "center",
-                                            "backgroundColor": " #f1f1f1",
-                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                        }} onClick={this.createAdmin.bind(this)}>
-                                            <h3>Create Admin</h3>
-                                            <p>Create New Admin</p>
-
-                                        </div>
-                                    </th>
                                 </tr>
+                                <tr><th scope="col">
+                                    <div className="card bg-primary text-white" style={{
+                                        "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+                                        "padding": "16px",
+                                        "textAlign": "center",
+                                        "backgroundColor": " #f1f1f1",
+                                        "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
+                                    }} onClick={this.raiseRequst.bind(this)}>
+                                        <h3>Raise a Request</h3>
+                                        <p>to donate</p>
+
+
+                                    </div>
+                                </th></tr>
                             </tbody>
                         </table>
                     </div>
@@ -222,4 +181,4 @@ class AdminDashboard extends Component {
     }
 }
 
-export default AdminDashboard
+export default NGODashboard

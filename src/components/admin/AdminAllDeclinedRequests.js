@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import APICalls from '../services/APICalls';
-import Navigations from './Navigations';
+import APICalls from '../../services/APICalls';
+
+import Navigations from '../Navigations';
+
+
 
 class AdminAllDeclinedRequests extends Component {
   
@@ -107,9 +110,9 @@ class AdminAllDeclinedRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+        <Navigations ></Navigations>
         <br></br>
-        <h2>Approved Request</h2>
+        <h2>Declined Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>
           <table className='table table-striped table-bordered'>
             <thead>
@@ -145,7 +148,7 @@ class AdminAllDeclinedRequests extends Component {
             </tbody>
           </table>
 
-          <Link to='adminDashboard'>Back</Link>
+          <Link to='/adminDashboard'>Back</Link>
         </div>
       </div>
     )

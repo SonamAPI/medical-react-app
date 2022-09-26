@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
+
 import Navigations from '../Navigations';
 
-class AdminAllPendingRequests extends Component {
+
+
+class NGOAllDeclinedRequests extends Component {
+  
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -26,7 +30,7 @@ class AdminAllPendingRequests extends Component {
     }
   }
   componentDidMount() {
-    APICalls.getPendingRequest().then(
+    APICalls.getDeclinedRequest().then(
       (resp) => {
         this.setState({
           medicineList: resp.data
@@ -106,9 +110,9 @@ class AdminAllPendingRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+        <Navigations ></Navigations>
         <br></br>
-        <h2>Approved Request</h2>
+        <h2>Declined Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>
           <table className='table table-striped table-bordered'>
             <thead>
@@ -144,10 +148,10 @@ class AdminAllPendingRequests extends Component {
             </tbody>
           </table>
 
-          <Link to='/adminDashboard'>Back</Link>
+          <Link to='/NGODashboard'>Back</Link>
         </div>
       </div>
     )
   }
 }
-export default AdminAllPendingRequests
+export default NGOAllDeclinedRequests

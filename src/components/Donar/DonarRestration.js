@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import APICalls from '../../services/APICalls';
 
-
-export default class AdminDonarRegistration extends Component {
+export default class DonarRestration extends Component {
   constructor(props) {
     super(props)
 
@@ -11,11 +10,11 @@ export default class AdminDonarRegistration extends Component {
       mail: "",
       userAddress: "",
       password: "",
-      gender: "",
+      yearofest: "",
       contact: "",
-      age: "",
-      bloodGroup: "",
-      role: "Donar"
+      membername: "",
+      regNo: "",
+      role: ""
     }
   }
 
@@ -25,9 +24,9 @@ export default class AdminDonarRegistration extends Component {
     });
   }
 
-  ageChange(e) {
+  memberNameChange(e) {
     this.setState({
-      age: e.target.value
+      membername: e.target.value
     });
   }
   contactChange(e) {
@@ -61,44 +60,52 @@ export default class AdminDonarRegistration extends Component {
     this.setState({
       password: e.target.value
     });
-  }
+  }yrofeastyrofeast
 
 
-  genderChange(e) {
+  yrofeastChange(e) {
     this.setState({
-      gender: e.target.value
+      yearofest: e.target.value
     });
-  } submitForm(e) {
+  } 
+  
+  regNoChange(e) {
+    this.setState({
+      regNo: e.target.value
+    });
+  }cancelBtn(e){
     e.preventDefault();
-    let hospitalObject = {
+    window.location = '/login'
+  }
+  submitForm(e) {
+    e.preventDefault();
+    let DonarpitalObject = {
       fullName: this.state.fullName,
       mail: this.state.mail,
       userAddress: this.state.userAddress,
       password: this.state.password,
-      gender: this.state.gender,
+      gender: "none",
+       age: 0,
+       bloodGroup:"none",
       contact: this.state.contact,
-      age: this.state.age,
-      bloodGroup: this.state.bloodGroup,
-      role: this.state.role,
-      yearofest: 0,
-      membername: "",
-      regNo: ""
+      yearofest: this.state.yearofest,
+      membername: this.state.membername,
+      regNo:this.state.regNo,
+      role: "Donar"
     }
 
-    console.log(hospitalObject);
-    APICalls.createUser(hospitalObject).then(
-      (res) =>
-        window.location = '/registerSuccess'
+    console.log(DonarpitalObject);
+    APICalls.createUser(DonarpitalObject).then(
+      (res)=>
+      
+      window.location = '/registerSuccess'
 
     )
-  } cancelBtn(e) {
-    e.preventDefault();
-    window.location = '/login'
   }
   render() {
 
-
-    const genders = ["Male", "Female"]
+    const roles = ["user", "admin","Donar","Donar","Donarpital"]
+  
 
     return (
       <div>
@@ -119,10 +126,7 @@ export default class AdminDonarRegistration extends Component {
                     <label> Mail: </label>
                     <input placeholder="Email" name="mail" className="form-control" value={this.state.mail} onChange={this.mailChange.bind(this)} />
                   </div><br></br>
-                  <div className="form-group">
-                    <label> Age: </label>
-                    <input placeholder="age" name="age" className="form-control" value={this.state.age} onChange={this.ageChange.bind(this)} />
-                  </div><br></br>
+                 
                   <div className="form-group">
                     <label> Address: </label>
                     <input placeholder="Address" name="userAddress" className="form-control" value={this.state.userAddress} onChange={this.userAddressChange.bind(this)} />
@@ -132,47 +136,34 @@ export default class AdminDonarRegistration extends Component {
                     <input type="password" placeholder="Password" name="password" className="form-control" value={this.state.password} onChange={this.passwordChange.bind(this)} />
                   </div><br></br>
 
-                  <div className="form-group">
-                    <label> Gender: </label>
-                    {genders.map(
-                      (myGender, index) => {
-                        return <div className="form-check" key={index}>
-                          <input className="form-check-input" type="radio" name="gender" value={myGender} onChange={this.genderChange.bind(this)} />
-                          <label className="form-check-label" htmlFor="gender">
-                            {myGender}
-                          </label>
-                        </div>
-                      }
-                    )
-                    }
-                  </div><br></br>
+                  
+
+                  
                   <div className="form-group">
                     <label> Contact: </label>
                     <input placeholder="Contact" name="contact" className="form-control" value={this.state.contact} onChange={this.contactChange.bind(this)} />
                   </div><br></br>
-                  <div className="form-group">
-                    <label> Blood Group: </label>
-                    <select id='options' placeholder="Blood Group" name="bloodGroup" className="form-control" value={this.state.bloodGroup} onChange={this.bloodGroupChange.bind(this)} >
-                      <option value="O +ve" >O +ve</option>
-                      <option value="O -ve">O -ve</option>
-                      <option value="A +ve">A +ve</option>
-                      <option value="A -ve">A -ve</option>
-                      <option value="B -ve">B -ve </option>
-                      <option value="B +ve">B +ve </option>
-                      <option value="AB +ve">AB +ve </option>
-                      <option value="AB -ve">AB -ve </option>
+                 
 
-
-                    </select></div><br></br>
 
                   <div className="form-group">
-                    <label> Role </label>
-                    <input placeholder="role" name="role" className="form-control" value={this.state.role} onChange={this.roleChange.bind(this)} />
+                    <label> Reg No: </label>
+                    <input  placeholder="Reg No" name="regNo" className="form-control" value={this.state.regNo} onChange={this.regNoChange.bind(this)} />
+                    
+                  </div><br></br>
+                  <div className="form-group">
+                    <label> Member Name: </label>
+                    <input placeholder="membername" name="membername" className="form-control" value={this.state.membername} onChange={this.memberNameChange.bind(this)} />
                   </div><br></br>
 
+                  <div className="form-group">
+                    <label> Year OF Eastablishment: </label>
+                    <input  placeholder="year" name="yearofest" className="form-control" value={this.state.yearofest} onChange={this.yrofeastChange.bind(this)} />
+                    
+                  </div><br></br>
 
                   <button className="btn btn-outline-primary" style={{ marginLeft: "100px" }} onClick={this.submitForm.bind(this)}>Save</button>
-                  <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }} onClick={this.cancelBtn.bind(this)}>Cancel</button>
+                  <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }}  onClick={this.cancelBtn.bind(this)}>Cancel</button>
                 </form>
               </div>
             </div>

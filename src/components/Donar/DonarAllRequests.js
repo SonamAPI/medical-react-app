@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../Navigations';
 
-class AdminAllRequests extends Component {
+class DonarAllRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -12,7 +12,7 @@ class AdminAllRequests extends Component {
       selectedMedicineID: "",
       reqRaiseFlag: false,
       showTableFlag: false,
-      roleForMedicineList: 'hospital',
+      roleForMedicineList: 'Donarpital',
       roleForPendingRequest: 'donor',
       id: '',
       medicineName: "",
@@ -129,8 +129,9 @@ class AdminAllRequests extends Component {
                   <th> Quantity</th>
                   <th> Role</th>
                   <th> Current status</th>
-                  <th> Status</th>
                   <th> Change Status</th>
+                 
+              
                 </tr>
               </thead>
               <tbody>
@@ -155,13 +156,14 @@ class AdminAllRequests extends Component {
 
                         <td>
                           <button onClick={() => this.changeStatus(med.raiseRequestmedId)} className="btn btn-info">Change Status </button></td>
+                      
                       </tr>
                   )
                 }
               </tbody>
             </table>
 
-            <Link to='/adminDashboard'>Back</Link>
+            <Link to='/DonarDashboard'>Back</Link>
           </div>
 
         </div>
@@ -170,4 +172,4 @@ class AdminAllRequests extends Component {
     )
   }
 }
-export default AdminAllRequests
+export default DonarAllRequests

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../Navigations';
 
-class AdminAllPendingRequests extends Component {
+class NGOAllPendingRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -144,10 +144,10 @@ class AdminAllPendingRequests extends Component {
             </tbody>
           </table>
 
-          <Link to='/adminDashboard'>Back</Link>
+          <Link to='/NGODashboard'>Back</Link>
         </div>
       </div>
     )
   }
 }
-export default AdminAllPendingRequests
+export default NGOAllPendingRequests

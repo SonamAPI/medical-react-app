@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../services/APICalls';
-import { userContext } from './ConstantClass';
+
 import Navigations from './Navigations';
 class DashBoardUser extends Component {
     
@@ -51,10 +51,10 @@ class DashBoardUser extends Component {
         window.location = '/createAdmin';
     }
 
-    static contextType = userContext;
+   
 
     render() {
-        const { id, role } = this.context
+       
 
         // this.setState({
         //     id: id,

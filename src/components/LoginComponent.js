@@ -4,7 +4,12 @@ import ErrorPage from '../components/ErrorPage';
 import DashBoard from './DashBoardUser';
 import DashBoardUser from './DashBoardUser';
 import DashBoardAdmin from './admin/AdminDashboard';
-import UserProvider from './ConstantClass';
+import UserDashboard from './User/UserDashboard';
+import AdminDashboard from './admin/AdminDashboard';
+import NGODashboard from './NGO/NGODashboard';
+import HosDashboard from './Hos/HosDashboard';
+import DonarDashboard from './Donar/DonarDashboard';
+
 
 export default class LoginComponent extends Component {
     constructor(props) {
@@ -56,6 +61,8 @@ export default class LoginComponent extends Component {
                     message: resp.data.message,
                     role: resp.data.role,
                     id: resp.data.id
+
+              
                 });
                 responseId = resp.data.id;
                 responseRole = resp.data.role;
@@ -101,28 +108,28 @@ export default class LoginComponent extends Component {
 
     createUser(e) {
         e.preventDefault();
-        window.location = '/createUser';
+        window.location = '/User-createUser';
     }
     createHospital(e) {
         e.preventDefault();
-        window.location = '/createHospital';
+        window.location = '/Hos-createHos';
     }
     createNGO(e) {
         e.preventDefault();
-        window.location = '/createNGO';
+        window.location = '/NGO-createNGO';
     }
     createDonar(e) {
         e.preventDefault();
-        window.location = '/createDonar';
+        window.location = '/Donar-createDonar';
     }
     createAdmin(e) {
         e.preventDefault();
-        window.location = '/createAdmin';
+        window.location = '/admin-createAdmin';
     }
 
     //-------------------
     render() {
-        const { id, role, changeObject } = this.context
+       
 
         const resposneMessage = this.state.message;
         const resposneRole = this.state.role;
@@ -262,13 +269,13 @@ export default class LoginComponent extends Component {
 
         }
 
-        if (resposneMessage === 'success'&& resposneRole !='admin') {
+        if (resposneMessage === 'success'&& resposneRole ==='user') {
             this.setState({
                 showLoginPage: false
             })
             divv = <div>
-                <UserProvider id={this.state.id} role={this.state.role}/>
-                <DashBoardUser></DashBoardUser>
+               
+                <UserDashboard></UserDashboard>
             </div>;
         }
 
@@ -278,7 +285,35 @@ export default class LoginComponent extends Component {
             })
             divv = <div>
                 
-                <DashBoardAdmin></DashBoardAdmin>
+                <AdminDashboard></AdminDashboard>
+            </div>;
+        }
+
+        if (resposneMessage === 'success'&& resposneRole ==='ngo') {
+            this.setState({
+                showLoginPage: false
+            })
+            divv = <div>
+               
+                <NGODashboard></NGODashboard>
+            </div>;
+        }
+        if (resposneMessage === 'success'&& resposneRole ==='hos') {
+            this.setState({
+                showLoginPage: false
+            })
+            divv = <div>
+               
+              <HosDashboard></HosDashboard>
+            </div>;
+        }
+        if (resposneMessage === 'success'&& resposneRole ==='donar') {
+            this.setState({
+                showLoginPage: false
+            })
+            divv = <div>
+               
+              <DonarDashboard></DonarDashboard>
             </div>;
         }
         if (resposneMessage === 'Invalide Credentials') {
