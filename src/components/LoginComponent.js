@@ -279,7 +279,7 @@ export default class LoginComponent extends Component {
             </div>;
         }
 
-        if (resposneMessage === 'success'&& resposneRole ==='admin') {
+        if (resposneMessage === 'success'&& (resposneRole ==='admin' || resposneRole ==='Admin')) {
             this.setState({
                 showLoginPage: false
             })

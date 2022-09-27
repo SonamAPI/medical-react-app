@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class AdminNavigations extends Component {
+export default class DonarNavigations extends Component {
     logout(e) {
         e.preventDefault();
         window.location = '/login';
@@ -18,7 +18,7 @@ export default class AdminNavigations extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-white">
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/adminDashboard">Home</a>
+                                    <a className="nav-link active text-white" aria-current="page" href="/DonarDashboard">Home</a>
                                 </li>
                                 
                                 <li className="nav-item">
@@ -26,7 +26,7 @@ export default class AdminNavigations extends Component {
                                 </li>
                                
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/admin-all-requests">Raised Request</a>
+                                    <a className="nav-link text-white" href="/Donar-all-requests">Raised Request</a>
                                 </li>
                                 
 

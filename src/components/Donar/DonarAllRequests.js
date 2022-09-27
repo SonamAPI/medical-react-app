@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import DonarNavigations from '../Donar/DonarNavigations';
 
 class DonarAllRequests extends Component {
   constructor(props) {
@@ -110,7 +110,7 @@ class DonarAllRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+      <DonarNavigations></DonarNavigations>
 
         <br></br>
         <div className='container text-white'>

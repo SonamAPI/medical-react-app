@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import APICalls from '../../services/APICalls';
+import AdminNavigations from './AdminNavigations';
 
 
 export default class AdminDonarRegistration extends Component {
@@ -102,6 +103,7 @@ export default class AdminDonarRegistration extends Component {
 
     return (
       <div>
+        <AdminNavigations></AdminNavigations>
         <br></br>
         <div className="container">
           <div className="row">

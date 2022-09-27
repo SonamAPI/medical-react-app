@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigations from '../Navigations';
+import Navigations from '../User/UserNavigations';
 
 class NGODashboard extends Component {
     constructor(props) {

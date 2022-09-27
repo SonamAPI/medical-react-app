@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigations from '../Navigations';
+import DonarNavigations from '../Donar/DonarNavigations';
 
 class DonarDashboard extends Component {
     constructor(props) {
@@ -52,7 +52,7 @@ class DonarDashboard extends Component {
             <div>
                 <div >
 
-                    <Navigations></Navigations>
+                <DonarNavigations></DonarNavigations>
 
 
 

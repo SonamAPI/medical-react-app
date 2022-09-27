@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import UserNavigations from './UserNavigations';
 
 
 
@@ -108,7 +108,7 @@ class UserAllCreatedRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-      
+      <UserNavigations></UserNavigations>
         <br></br>
         <h2>Created Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>

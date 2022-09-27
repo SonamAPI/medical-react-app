@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import HosNavigations from '../Hos/HosNavigations';
 
 class HosAllPendingRequests extends Component {
   constructor(props) {
@@ -106,7 +106,7 @@ class HosAllPendingRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+       <HosNavigations></HosNavigations>
         <br></br>
         <h2>Approved Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>

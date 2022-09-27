@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import Navigations from '../User/UserNavigations';
 
 class NGOAllRequests extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Navigations extends Component {
+export default class NGONavigations extends Component {
     logout(e) {
         e.preventDefault();
         window.location = '/login';
@@ -18,24 +18,20 @@ export default class Navigations extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-white">
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/userDashboard">Home</a>
+                                    <a className="nav-link active text-white" aria-current="page" href="/NGODashboard">Home</a>
                                 </li>
                                 
                                 <li className="nav-item">
                                     <a className="nav-link text-white" href="/medicines">Medicines</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/raise-req">Raise a Request</a>
+                                    <a className="nav-link text-white" href="/NGO-raise-req">Raise a Request</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/all-request">Raised Request</a>
+                                    <a className="nav-link text-white" href="/NGO-all-request">Raised Request</a>
                                 </li>
-                                
-
-                             
                             </ul>
                             <form className="d-flex">
-
                                 <button className="btn btn-outline-success" type="submit" onClick={this.logout.bind(this)}>Logout</button>
                             </form>
                         </div>

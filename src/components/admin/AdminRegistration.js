@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
+import AdminNavigations from './AdminNavigations';
 
 export default class AdminRegistration extends Component {
   constructor(props) {
@@ -97,12 +98,10 @@ export default class AdminRegistration extends Component {
     window.location = '/login'
   }
   render() {
-
-   
     const genders = ["Male", "Female"]
-
     return (
       <div>
+        <AdminNavigations></AdminNavigations>
         <br></br>
         <div className="container">
           <div className="row">

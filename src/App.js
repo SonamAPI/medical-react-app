@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+import { connect, Provider } from 'react-redux'
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import background from "./medical2.jpg";
@@ -10,50 +10,49 @@ import AdminAllApprovedRequests from './components/admin/AdminAllApprovedRequest
 import AdminAllCreatedRequests from './components/admin/AdminAllCreatedRequests';
 import AdminAllDeclinedRequests from './components/admin/AdminAllDeclinedRequests';
 import AdminAllPendingRequests from './components/admin/AdminAllPendingRequests';
-import AdminDonarRegistration from './components/admin/AdminDonarRegistration'; 
-import AdminUserRegistration from './components/admin/AdminUserRegistration'; 
-import AdminHospitalRegistration from './components/admin/AdminHospitalRegistration'; 
-import AdminRegistration from './components/admin/AdminRegistration'; 
-import AdminAllRequests from './components/admin/AdminAllRequests'; 
-import AdminNGORestration from './components/admin/AdminNGORestration'; 
+import AdminDonarRegistration from './components/admin/AdminDonarRegistration';
+import AdminUserRegistration from './components/admin/AdminUserRegistration';
+import AdminHospitalRegistration from './components/admin/AdminHospitalRegistration';
+import AdminRegistration from './components/admin/AdminRegistration';
+import AdminAllRequests from './components/admin/AdminAllRequests';
+import AdminNGORestration from './components/admin/AdminNGORestration';
 
 import NGODashboard from './components/NGO/NGODashboard';
 import NGOAllApprovedRequests from './components/NGO/NGOAllApprovedRequests';
 import NGOAllCreatedRequests from './components/NGO/NGOAllCreatedRequests';
 import NGOAllDeclinedRequests from './components/NGO/NGOAllDeclinedRequests';
 import NGOAllPendingRequests from './components/NGO/NGOAllPendingRequests';
-import NGOAllRequests from './components/NGO/NGOAllRequests'; 
+import NGOAllRequests from './components/NGO/NGOAllRequests';
 import NGORaiseRequestComponent from './components/NGO/NGORaiseRequestComponent';
-import NGORestration from './components/NGO/NGORestration'; 
+import NGORestration from './components/NGO/NGORestration';
 
 import HosDashboard from './components/Hos/HosDashboard';
 import HosAllApprovedRequests from './components/Hos/HosAllApprovedRequests';
 import HosAllCreatedRequests from './components/Hos/HosAllCreatedRequests';
 import HosAllDeclinedRequests from './components/Hos/HosAllDeclinedRequests';
 import HosAllPendingRequests from './components/Hos/HosAllPendingRequests';
-import HosAllRequests from './components/Hos/HosAllRequests'; 
+import HosAllRequests from './components/Hos/HosAllRequests';
 import HosRaiseRequestComponent from './components/Hos/HosRaiseRequestComponent';
-import HosRestration from './components/Hos/HosRestration'; 
+import HosRestration from './components/Hos/HosRestration';
 
 import DonarDashboard from './components/Donar/DonarDashboard';
 import DonarAllApprovedRequests from './components/Donar/DonarAllApprovedRequests';
 import DonarAllCreatedRequests from './components/Donar/DonarAllCreatedRequests';
 import DonarAllDeclinedRequests from './components/Donar/DonarAllDeclinedRequests';
 import DonarAllPendingRequests from './components/Donar/DonarAllPendingRequests';
-import DonarAllRequests from './components/Donar/DonarAllRequests'; 
+import DonarAllRequests from './components/Donar/DonarAllRequests';
 import DonarRaiseRequestComponent from './components/Donar/DonarRaiseRequestComponent';
-import DonarRestration from './components/Donar/DonarRestration'; 
+import DonarRestration from './components/Donar/DonarRestration';
 
 import UserDashboard from './components/User/UserDashboard';
 import UserAllApprovedRequests from './components/User/UserAllApprovedRequests';
 import UserAllCreatedRequests from './components/User/UserAllCreatedRequests';
 import UserAllDeclinedRequests from './components/User/UserAllDeclinedRequests';
 import UserAllPendingRequests from './components/User/UserAllPendingRequests';
-import UserAllRequests from './components/User/UserAllRequests'; 
+import UserAllRequests from './components/User/UserAllRequests';
 import UserRaiseRequestComponent from './components/User/UserRaiseRequestComponent';
-import UserRestration from './components/User/UserRestration'; 
+import UserRestration from './components/User/UserRestration';
 import LoginComponent from './components/LoginComponent';
-
 
 function App() {
   const myStyle = {
@@ -64,7 +63,11 @@ function App() {
   };
   return (
     <div className='container-fluid' style={myStyle}>
-      <HeaderComponent />
+
+      {/* <Provider store={store} >
+        <Counter></Counter>
+      </Provider> */}
+       <HeaderComponent />
        <Routes>
 
        <Route path="/adminDashboard" element={<AdminDashboard/>} />
@@ -78,8 +81,7 @@ function App() {
       <Route path="/admin-createHospital" element={<AdminHospitalRegistration/>} />
       <Route path="/admin-createAdmin" element={<AdminRegistration/>} />
       <Route path="/admin-createNGO" element={<AdminNGORestration/>} />
-
-      
+    
     
    
 
@@ -125,9 +127,15 @@ function App() {
 
 
       </Routes>
-      <FooterComponent />
+      <FooterComponent /> 
+
+  
+
     </div>
 
 
   );
 } export default App;
+
+
+///////

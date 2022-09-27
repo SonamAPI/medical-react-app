@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigations from '../Navigations';
+import UserNavigations from './UserNavigations';
 
 class UserDashboard extends Component {
     constructor(props) {
@@ -52,7 +52,7 @@ class UserDashboard extends Component {
             <div>
                 <div >
 
-                    <Navigations></Navigations>
+                <UserNavigations></UserNavigations>
 
 
 

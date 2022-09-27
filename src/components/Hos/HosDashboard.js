@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigations from '../Navigations';
+import HosNavigations from '../Hos/HosNavigations';
 
 class HosDashboard extends Component {
     constructor(props) {
@@ -52,7 +52,7 @@ class HosDashboard extends Component {
             <div>
                 <div >
 
-                    <Navigations></Navigations>
+                <HosNavigations></HosNavigations>
 
 
 

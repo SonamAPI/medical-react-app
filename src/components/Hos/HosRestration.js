@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import APICalls from '../../services/APICalls';
+import HosNavigations from '../Hos/HosNavigations';
 
 export default class HosRestration extends Component {
   constructor(props) {
@@ -109,6 +110,7 @@ export default class HosRestration extends Component {
 
     return (
       <div>
+        <HosNavigations></HosNavigations>
         <br></br>
         <div className="container">
           <div className="row">

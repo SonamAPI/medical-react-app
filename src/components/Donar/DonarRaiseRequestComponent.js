@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import DonarNavigations from '../Donar/DonarNavigations';
 
 
 
@@ -103,7 +103,7 @@ export default class DonarRaiseRequestComponent extends Component {
   render() {
     return (
       <div>
-        <Navigations></Navigations>
+       <DonarNavigations></DonarNavigations>
         <br></br>
 
 

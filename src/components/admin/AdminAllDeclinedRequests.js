@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 
-import Navigations from '../Navigations';
+import Navigations from '../User/UserNavigations';
+import AdminNavigations from './AdminNavigations';
 
 
 
@@ -110,7 +111,7 @@ class AdminAllDeclinedRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations ></Navigations>
+        <AdminNavigations></AdminNavigations>
         <br></br>
         <h2>Declined Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>

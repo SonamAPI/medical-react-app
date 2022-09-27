@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import HosNavigations from '../Hos/HosNavigations';
 
 class HosAllRequests extends Component {
   constructor(props) {
@@ -110,7 +110,7 @@ class HosAllRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+      <HosNavigations></HosNavigations>
 
         <br></br>
         <div className='container text-white'>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import APICalls from '../../services/APICalls';
+import DonarNavigations from '../Donar/DonarNavigations';
 
 export default class DonarRestration extends Component {
   constructor(props) {
@@ -109,6 +110,7 @@ export default class DonarRestration extends Component {
 
     return (
       <div>
+        <DonarNavigations></DonarNavigations>
         <br></br>
         <div className="container">
           <div className="row">

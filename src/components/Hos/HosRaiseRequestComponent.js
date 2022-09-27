@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import HosNavigations from '../Hos/HosNavigations';
 
 
 
@@ -103,7 +103,7 @@ export default class HosRaiseRequestComponent extends Component {
   render() {
     return (
       <div>
-        <Navigations></Navigations>
+       <HosNavigations></HosNavigations>
         <br></br>
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import APICalls from '../../services/APICalls';
+import AdminNavigations from './AdminNavigations';
 
 export default class AdminNGORestration extends Component {
   constructor(props) {
@@ -109,6 +110,7 @@ export default class AdminNGORestration extends Component {
 
     return (
       <div>
+        <AdminNavigations></AdminNavigations>
         <br></br>
         <div className="container">
           <div className="row">

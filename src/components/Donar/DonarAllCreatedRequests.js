@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import APICalls from '../../services/APICalls'; import DonarNavigations from '../Donar/DonarNavigations';
 
 
 
@@ -108,10 +107,10 @@ class DonarAllCreatedRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-      
+<DonarNavigations></DonarNavigations>
         <br></br>
         <h2>Created Request</h2>
-        <div className='row'  style={{"overflow-x":"auto"}}>
+        <div className='row' style={{ "overflow-x": "auto" }}>
           <table className='table table-striped table-bordered'>
             <thead>
               <tr>
@@ -123,7 +122,7 @@ class DonarAllCreatedRequests extends Component {
                 <th> Quantity</th>
                 <th> Role</th>
                 <th> Current status</th>
-                
+
               </tr>
             </thead>
             <tbody>
@@ -139,7 +138,7 @@ class DonarAllCreatedRequests extends Component {
                       <td> {med.medicineQuantity}</td>
                       <td> {med.role}</td>
                       <td> {med.status}</td>
-                      
+
                     </tr>
                 )
               }

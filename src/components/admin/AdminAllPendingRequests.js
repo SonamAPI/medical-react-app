@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
-import Navigations from '../Navigations';
+import AdminNavigations from './AdminNavigations';
+
 
 class AdminAllPendingRequests extends Component {
   constructor(props) {
@@ -106,7 +107,7 @@ class AdminAllPendingRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+        <AdminNavigations></AdminNavigations>
         <br></br>
         <h2>Approved Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>

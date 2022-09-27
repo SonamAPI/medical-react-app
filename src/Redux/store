@@ -1,0 +1,15 @@
+import {configureStore, combineReducers} from "@reduxjs/toolkit";
+import {reducer} from "./reducer";
+
+
+const reducer = combineReducers({
+reducerDemo: reducer
+});
+
+const store = configureStore({
+reducer
+});
+
+
+
+export default store;
