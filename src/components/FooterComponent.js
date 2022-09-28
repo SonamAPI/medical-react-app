@@ -30,7 +30,7 @@ class FooterComponent extends Component {
         
         <h5 className="text-uppercase">Online Medicine Donation</h5>
         <p>This application is mainly designed for medicine donation facility.<br></br>
-© 2021 This application  is registered in India as a "Online MEdicine Donation Application" | Registration No. E4330.</p>
+© 2021 This application  is registered in India as a "Online Medicine Donation Application" | Registration No. E4330.</p>
 
       </div>
       

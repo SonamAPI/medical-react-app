@@ -15,9 +15,9 @@ class DonarDashboard extends Component {
         window.location = '/Donar-raise-request';
     }
 
-  
 
-    createDonar(){
+
+    createDonar() {
         window.location = '/Donar-createDonar';
 
     }
@@ -42,7 +42,7 @@ class DonarDashboard extends Component {
     }
 
 
-    
+
 
 
 
@@ -52,7 +52,7 @@ class DonarDashboard extends Component {
             <div>
                 <div >
 
-                <DonarNavigations></DonarNavigations>
+                    <DonarNavigations></DonarNavigations>
 
 
 
@@ -106,32 +106,8 @@ class DonarDashboard extends Component {
 
                                         </div>
                                     </th>
-                                    <th scope="col">
-                                        <div className="card bg-success text-white" style={{
-                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                            "padding": "16px",
-                                            "textAlign": "center",
-                                            "backgroundColor": " #f1f1f1",
-                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                        }} onClick={this.showCreatedList.bind(this)}>
-                                            <h3>Created List</h3>
-                                            <p>See all approved things</p>
 
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div className="card bg-warning text-white" style={{
-                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                            "padding": "16px",
-                                            "textAlign": "center",
-                                            "backgroundColor": " #f1f1f1",
-                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                        }} onClick={this.showPendingList.bind(this)}>
-                                            <h3>Pending List</h3>
-                                            <p>See all pending things</p>
 
-                                        </div>
-                                    </th>
                                 </tr><tr>
                                 </tr>
                                 <tr>
@@ -149,19 +125,31 @@ class DonarDashboard extends Component {
                                         </div>
                                     </th>
                                     <th scope="col">
-                                    <div className="card bg-primary text-white" style={{
-                                        "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-                                        "padding": "16px",
-                                        "textAlign": "center",
-                                        "backgroundColor": " #f1f1f1",
-                                        "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
-                                    }} onClick={this.raiseRequst.bind(this)}>
-                                        <h3>Raise a Request</h3>
-                                        <p>to donate</p>
+                                        <div className="card bg-warning text-white" style={{
+                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+                                            "padding": "16px",
+                                            "textAlign": "center",
+                                            "backgroundColor": " #f1f1f1",
+                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
+                                        }} onClick={this.showPendingList.bind(this)}>
+                                            <h3>Pending List</h3>
+                                            <p>See all pending things</p>
 
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div className="card bg-success text-white" style={{
+                                            "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+                                            "padding": "16px",
+                                            "textAlign": "center",
+                                            "backgroundColor": " #f1f1f1",
+                                            "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
+                                        }} onClick={this.showCreatedList.bind(this)}>
+                                            <h3>Created List</h3>
+                                            <p>See all approved things</p>
 
-                                    </div>
-                                </th>
+                                        </div>
+                                    </th>
 
                                 </tr>
                                 <tr></tr>
