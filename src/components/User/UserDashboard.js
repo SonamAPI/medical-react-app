@@ -46,7 +46,11 @@ class UserDashboard extends Component {
 
 
                     <h1 className="display-3 text-center">User Dashboard</h1>
-
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">   <br></br><br></br></div>
+                        <div class="col-sm-4"></div>
+                    </div>
 
                     <br></br><br></br><br></br>
                     <div className='container' style={{ "overflowX": "auto" }} >
@@ -107,6 +111,12 @@ class UserDashboard extends Component {
 
 
                 </div>
+
+                <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">   <br></br><br></br></div>
+                        <div class="col-sm-4"></div>
+                    </div>
             </div>
 
 
