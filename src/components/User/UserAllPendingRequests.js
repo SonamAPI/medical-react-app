@@ -108,7 +108,7 @@ class UserAllPendingRequests extends Component {
       <div>
        <UserNavigations></UserNavigations>
         <br></br>
-        <h2>Approved Request</h2>
+        <h2>Pending Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>
           <table className='table table-striped table-bordered'>
             <thead>

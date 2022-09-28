@@ -100,7 +100,7 @@ class DonarAllRequests extends Component {
 
     )
 
-    window.location = '/all-request';
+    window.location = '/Donar-all-requests';
   }
   logout(e) {
     e.preventDefault();

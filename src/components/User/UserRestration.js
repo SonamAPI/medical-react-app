@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import UserNavigations from './UserNavigations';
 
@@ -97,11 +98,11 @@ export default class UserRestration extends Component {
 
     console.log(UserpitalObject);
     APICalls.createUser(UserpitalObject).then(
-      (res)=>
+     
       
-      window.location = '/registerSuccess'
 
     )
+    window.location = '/registerSuccess'
   }
   render() {
 
@@ -148,21 +149,7 @@ export default class UserRestration extends Component {
                  
 
 
-                  <div className="form-group">
-                    <label> Reg No: </label>
-                    <input  placeholder="Reg No" name="regNo" className="form-control" value={this.state.regNo} onChange={this.regNoChange.bind(this)} />
-                    
-                  </div><br></br>
-                  <div className="form-group">
-                    <label> Member Name: </label>
-                    <input placeholder="membername" name="membername" className="form-control" value={this.state.membername} onChange={this.memberNameChange.bind(this)} />
-                  </div><br></br>
-
-                  <div className="form-group">
-                    <label> Year OF Eastablishment: </label>
-                    <input  placeholder="year" name="yearofest" className="form-control" value={this.state.yearofest} onChange={this.yrofeastChange.bind(this)} />
-                    
-                  </div><br></br>
+                  <br></br>
 
                   <button className="btn btn-outline-primary" style={{ marginLeft: "100px" }} onClick={this.submitForm.bind(this)}>Save</button>
                   <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }}  onClick={this.cancelBtn.bind(this)}>Cancel</button>
@@ -171,6 +158,7 @@ export default class UserRestration extends Component {
             </div>
           </div>
         </div >
+        <Link to='/UserDashboard'>Back</Link>
       </div >
     )
   }

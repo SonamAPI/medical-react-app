@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import UserNavigations from './UserNavigations';
 
-class HosAllRequests extends Component {
+class UserAllRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -125,7 +125,7 @@ class HosAllRequests extends Component {
                   <th>Req. ID</th>
                   <th> Medicine Name</th>
                   <th> Medicine Type Name</th>
-                  <th> Expriy Date</th>
+                 
                   <th> Quantity</th>
                   <th> Role</th>
                   <th> Current status</th>
@@ -142,7 +142,7 @@ class HosAllRequests extends Component {
                         <td> {med.raiseRequestmedId} </td>
                         <td> {med.medicineName} </td>
                         <td> {med.medicineType}</td>
-                        <td> {med.medicineExpiry}</td>
+                       
                         <td> {med.medicineQuantity}</td>
                         <td> {med.role}</td>
                         <td> {med.status}</td>
@@ -162,4 +162,4 @@ class HosAllRequests extends Component {
     )
   }
 }
-export default HosAllRequests
+export default UserAllRequests

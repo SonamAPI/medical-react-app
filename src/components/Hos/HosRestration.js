@@ -97,11 +97,10 @@ export default class HosRestration extends Component {
 
     console.log(hospitalObject);
     APICalls.createUser(hospitalObject).then(
-      (res)=>
       
-      window.location = '/registerSuccess'
-
+      
     )
+    window.location = '/registerSuccess'
   }
   render() {
 

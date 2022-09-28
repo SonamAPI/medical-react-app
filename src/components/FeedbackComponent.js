@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import APICalls from '../services/APICalls';
+import CommonNavigations from './CommonNavigations';
 
 class FeedbackComponent extends Component {
   constructor(props) {
@@ -58,9 +59,9 @@ class FeedbackComponent extends Component {
     }
     APICalls.createFeedback(hospitalObject).then(
 
-      window.location='/userDashboard'
+      window.location = '/userDashboard'
     )
-    
+
 
   }
   render() {
@@ -68,7 +69,7 @@ class FeedbackComponent extends Component {
 
     return (
       <div>
-
+        <CommonNavigations />
         <br></br>
         <div className="container">
           <div className="row">
@@ -82,10 +83,10 @@ class FeedbackComponent extends Component {
                     <input placeholder="Full Name" name="fullName" className="form-control" value={this.state.fullName} onChange={this.fullNameChange.bind(this)} />
                   </div>
                   <br></br>
-                 
+
                   <div className="form-group">
                     <label> Opinion: </label>
-                    <textarea  type="text" placeholder="Opinion" name="desc" className="form-control" value={this.state.desc} onChange={this.descChange.bind(this)} />
+                    <textarea type="text" placeholder="Opinion" name="desc" className="form-control" value={this.state.desc} onChange={this.descChange.bind(this)} />
                   </div><br></br>
 
 
@@ -101,7 +102,7 @@ class FeedbackComponent extends Component {
           <br></br>
           <br></br>
         </div >
-    
+
       </div >
     )
   }

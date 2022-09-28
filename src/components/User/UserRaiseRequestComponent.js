@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
+import UserNavigations from './UserNavigations';
 import Navigations from './UserNavigations';
 
 
@@ -16,44 +17,35 @@ export default class UserRaiseRequestComponent extends Component {
       referedUserpital: "",
       medicineList: [],
       medicineDetails: {},
-      medId: "",
+     
       medicineName: "",
       medicineType: "",
       medicineQuantity: "",
-      role: "",
-      medicineExpiry: ""
+      role: ""
     }
   }
-  componentDidMount() {
-    APICalls.getAllMedicines().then(
-      (resp) =>
-        this.setState({
-          medicineList: resp.data
-        })
-    );
-  }
-
-  referedUserpitalChange(e) {
+  
+  medicineNameChange(e) {
+    
     this.setState({
-      referedUserpital: e.target.value
+      medicineName: e.target.value
     });
   }
   changeMedicineType(e) {
+    
     this.setState({
-      userName: e.target.value
+      medicineType: e.target.value
     });
   }
-  DOBChange(e) {
-    this.setState({
-      DOB: e.target.value
-    });
-  }
+
   changeMedicineQuantity(e) {
+    
     this.setState({
       medicineQuantity: e.target.value
     });
   }
   changeRole(e) {
+  
     this.setState({
       role: e.target.value
     });
@@ -62,12 +54,10 @@ export default class UserRaiseRequestComponent extends Component {
     e.preventDefault();
     // let UserpitalObject = this.state.medicineDetails;
     let UserpitalObject = {
-      medId: this.state.medicineDetails.medId,
-      medicineName: this.state.medicineDetails.medicineName,
-      medicineType: this.state.medicineDetails.medicineType,
+      medicineName: this.state.medicineName,
+      medicineType: this.state.medicineType,
       medicineQuantity: this.state.medicineQuantity,
-      medicineExpiry: this.state.medicineDetails.medicineExpiry,
-      role: this.state.role,
+      role: "User",
       status: "Created"
     };
     console.log("inside submit : ", UserpitalObject);
@@ -82,28 +72,14 @@ export default class UserRaiseRequestComponent extends Component {
         console.error('There was an error!', error);
       });
 
-      window.location="/dashboard";
+      window.location="/UserDashboard";
   }
 
-  getMedicineByID(e) {
-    console.log(e.target.value);
-    this.setState({
-      selectedMedicineID: e.target.value
-    })
 
-    console.log('calling id: ', e.target.value);
-    APICalls.getMedicineById(e.target.value).then(
-      (resp) => {
-        this.setState({
-          medicineDetails: resp.data
-        })
-      }
-    )
-  }
   render() {
     return (
       <div>
-        <Navigations></Navigations>
+        <UserNavigations></UserNavigations>
         <br></br>
 
 
@@ -117,42 +93,41 @@ export default class UserRaiseRequestComponent extends Component {
           <div className="row center-align">
             
             
-            <h4>Raise A Request To Donate The Medicines..</h4>
             
-            <br></br><br></br>
+            
+
             <div className="card col-md-6 offset-md-3 offset-md-3 opacity-10">
-            <br></br><br></br>
+            <br></br>
+            <h4>Raise A Request To Donate The Medicines..</h4>
           
-              <br></br>
+              
               <div className="card-body ">
                 <form >
                   <div className="form-group" >
                     <label>Medicine Type: </label>
-                    <input placeholder="Medicine Type" name="medicineType" className="form-control" value={this.state.medicineDetails.medicineType || ""} onChange={this.changeMedicineType.bind(this)} />
+                    <input placeholder="Medicine Type" name="medicineType" className="form-control" value={this.state.medicineType} onChange={this.changeMedicineType.bind(this)} />
                   </div>
                   <br></br>
                   <div className="form-group">
                     <label> Medicine Name: </label>
-                    <input placeholder="Medicine Name" name="medicineName" className="form-control" value={this.state.medicineDetails.medicineName || ""} onChange={this.DOBChange.bind(this)} />
+                    <input placeholder="Medicine Name" name="medicineName" className="form-control" value={this.state.medicineName } onChange={this.medicineNameChange  .bind(this)} />
                   </div><br></br>
                   <div className="form-group">
                     <label> Quantity: </label>
                     <input placeholder="Quantity" name="Quantity" className="form-control" value={this.state.medicineQuantity} onChange={this.changeMedicineQuantity.bind(this)} />
                   </div><br></br>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label> Role: </label>
                     <select id='options'   placeholder="Role" name="role" className="form-control" value={this.state.role} onChange={this.changeRole.bind(this)} >
                     <option  >Select</option>
                       <option value="User" >User</option>
                       <option value="Admin">Admin</option>
-                      <option value="Userpital">Userpital</option>
+                      <option value="Userpital">Hospital</option>
+                      <option value="NGO">NGO</option>
                     </select>
 
-                  </div><br></br>
-                  <div className="form-group">
-                    <label> Expiry: </label>
-                    <input placeholder="Expiry" name="medicineExpiry" className="form-control" value={this.state.medicineDetails.medicineExpiry || ""} onChange={this.referedUserpitalChange.bind(this)} />
-                  </div><br></br>
+                  </div><br></br> */}
+                 
                   <button className="btn btn-outline-primary"  onClick={this.submitForm.bind(this)}>Raise Request</button>
                   <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }}>Cancel</button>
                 </form>

@@ -143,7 +143,7 @@ class DonarDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createDonar.bind(this)}>
-                                            <h3>Create Donar</h3>
+                                            <h3>Register Donar</h3>
                                             <p>Create A New Donar</p>
 
                                         </div>

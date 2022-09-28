@@ -4,7 +4,7 @@ import APICalls from '../../services/APICalls';
 import HosNavigations from '../Hos/HosNavigations';
 
 
-class NGOAllApprovedRequests extends Component {
+class HosAllApprovedRequests extends Component {
   constructor(props) {
     super(props)
     this.raiseRequest = this.changeStatus.bind(this);
@@ -156,4 +156,4 @@ class NGOAllApprovedRequests extends Component {
     )
   }
 }
-export default NGOAllApprovedRequests
+export default HosAllApprovedRequests

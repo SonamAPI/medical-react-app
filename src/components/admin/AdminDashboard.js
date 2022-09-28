@@ -148,7 +148,7 @@ class AdminDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createUser.bind(this)}>
-                                            <h3>Create User</h3>
+                                            <h3>Register User</h3>
                                             <p>Create A New User</p>
 
                                         </div>
@@ -161,7 +161,7 @@ class AdminDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createNGO.bind(this)}>
-                                            <h3>Create NGO</h3>
+                                            <h3>Register NGO</h3>
                                             <p>Create A New NGO</p>
 
                                         </div>
@@ -174,7 +174,7 @@ class AdminDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createHospital.bind(this)}>
-                                            <h3>Create Hospital</h3>
+                                            <h3>Register Hospital</h3>
                                             <p>Create New Hospital</p>
 
                                         </div>
@@ -187,7 +187,7 @@ class AdminDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createDonar.bind(this)}>
-                                            <h3>Create Donar</h3>
+                                            <h3>Register Donar</h3>
                                             <p>Create New Donar</p>
 
                                         </div>

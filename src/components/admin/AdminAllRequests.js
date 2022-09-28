@@ -101,7 +101,7 @@ class AdminAllRequests extends Component {
 
     )
 
-    window.location = '/all-request';
+    window.location = '/admin-all-requests';
   }
   logout(e) {
     e.preventDefault();

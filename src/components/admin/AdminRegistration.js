@@ -80,7 +80,7 @@ export default class AdminRegistration extends Component {
       contact: this.state.contact,
       age: this.state.age,
       bloodGroup: this.state.bloodGroup,
-      role: this.state.role,
+      role: "admin",
       yearofest: 0,
       membername: "",
       regNo:""

@@ -91,16 +91,17 @@ export default class NGORestration extends Component {
       yearofest: this.state.yearofest,
       membername: this.state.membername,
       regNo:this.state.regNo,
-      role: "NGO"
+      role: "ngo"
     }
 
     console.log(hospitalObject);
     APICalls.createUser(hospitalObject).then(
-      (res)=>
+    
       
-      window.location = '/registerSuccess'
+      
 
     )
+    window.location = '/registerSuccess'
   }
   render() {
 

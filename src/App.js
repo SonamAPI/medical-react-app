@@ -53,6 +53,15 @@ import UserAllRequests from './components/User/UserAllRequests';
 import UserRaiseRequestComponent from './components/User/UserRaiseRequestComponent';
 import UserRestration from './components/User/UserRestration';
 import LoginComponent from './components/LoginComponent';
+import AdminMedicineListComponent from './components/AdminMedicineListComponent';
+import UserMedicineListComponent from './components/User/UserMedicineListComponent';
+import NGOMedicineListComponent from './components/NGO/NGOMedicineListComponent';
+import DonarMedicineListComponent from './components/Donar/DonarMedicineListComponent';
+import HosMedicineListComponent from './components/Hos/HosMedicineListComponent'; 
+import SuccessRegister from './components/SuccessRegister';
+import AboutUs from './components/AboutUs'
+import ContactUs from './components/ContactUs'
+import FeedbackComponent from './components/FeedbackComponent'
 
 function App() {
   const myStyle = {
@@ -123,8 +132,16 @@ function App() {
 
 
        <Route path="/login" element={<LoginComponent/>} />
+       <Route path="/adminMedicines" element={<AdminMedicineListComponent/>} />
+       <Route path="/userMedicines" element={<UserMedicineListComponent/>} />
+       <Route path="/NGOMedicines" element={<NGOMedicineListComponent/>} />
+       <Route path="/DonarMedicines" element={<DonarMedicineListComponent/>} /> 
+       <Route path="/HosMedicines" element={<HosMedicineListComponent/>} />
 
-
+       <Route path="/registerSuccess" element={<SuccessRegister/>} />
+       <Route path="/feedback" element={<FeedbackComponent/>} />
+       <Route path="/aboutus" element={<AboutUs></AboutUs>} />
+       <Route path="/contactus" element={<ContactUs/>} />
 
       </Routes>
       <FooterComponent /> 

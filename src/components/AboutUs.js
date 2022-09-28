@@ -1,4 +1,6 @@
-import React, { Component } from 'react'; import Navigations from './Navigations';
+import React, { Component } from 'react'; 
+import CommonNavigations from './CommonNavigations';
+
 class AboutUs extends Component {
   constructor(props) {
     super(props)
@@ -9,9 +11,9 @@ class AboutUs extends Component {
   render() {
     return (
       <div >
-        {/* nav bar  start*/}
-        <Navigations></Navigations>
-        {/* nav bar end */}
+     <CommonNavigations/>
+       
+        
 
 
 

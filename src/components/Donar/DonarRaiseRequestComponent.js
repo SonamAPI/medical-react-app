@@ -82,7 +82,7 @@ export default class DonarRaiseRequestComponent extends Component {
         console.error('There was an error!', error);
       });
 
-      window.location="/dashboard";
+      window.location="/DonarDashboard";
   }
 
   getMedicineByID(e) {
@@ -139,20 +139,7 @@ export default class DonarRaiseRequestComponent extends Component {
                     <label> Quantity: </label>
                     <input placeholder="Quantity" name="Quantity" className="form-control" value={this.state.medicineQuantity} onChange={this.changeMedicineQuantity.bind(this)} />
                   </div><br></br>
-                  <div className="form-group">
-                    <label> Role: </label>
-                    <select id='options'   placeholder="Role" name="role" className="form-control" value={this.state.role} onChange={this.changeRole.bind(this)} >
-                    <option  >Select</option>
-                      <option value="User" >User</option>
-                      <option value="Admin">Admin</option>
-                      <option value="Donarpital">Donarpital</option>
-                    </select>
-
-                  </div><br></br>
-                  <div className="form-group">
-                    <label> Expiry: </label>
-                    <input placeholder="Expiry" name="medicineExpiry" className="form-control" value={this.state.medicineDetails.medicineExpiry || ""} onChange={this.referedDonarpitalChange.bind(this)} />
-                  </div><br></br>
+                  
                   <button className="btn btn-outline-primary"  onClick={this.submitForm.bind(this)}>Raise Request</button>
                   <button className="btn btn-outline-danger" style={{ marginLeft: "200px" }}>Cancel</button>
                 </form>

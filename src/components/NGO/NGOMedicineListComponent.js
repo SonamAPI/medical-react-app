@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import APICalls from '../services/APICalls';
-
-import Navigations from './Navigations';
-
-import RaiseRequestComponent from './RaiseRequestComponent';
+import APICalls from '../../services/APICalls';
+import NGONavigations from './NGONavigations';
 
 
-
-class MedicineListComponent extends Component {
+class NGOMedicineListComponent extends Component {
 
   constructor(props) {
+
     super(props)
     this.raiseRequest = this.raiseRequest.bind(this);
+
     this.state = {
       selectedMedicineID: "",
       reqRaiseFlag: false,
       showTableFlag: false,
-      roleForMedicineList: 'hospital',
       roleForPendingRequest: 'donor',
       id: '',
       medicineName: "",
@@ -35,7 +32,10 @@ class MedicineListComponent extends Component {
           medicineList: resp.data
         })
       }
+
     );
+
+
   }
 
   medicineQuantityChange(e) {
@@ -81,31 +81,29 @@ class MedicineListComponent extends Component {
       "address": this.state.expDate,
       "medicineQuantityName": this.state.medicineQuantity
     }
-
-    console.log(hospitalObject);
   }
 
   raiseRequest(medicineID) {
-    console.log("med ID=", medicineID);
-    this.setState({
-      reqRaiseFlag: false,
-      selectedMedicineID: medicineID
-    })
+   
 
-    window.location = '/raise-req';
+    
+    window.location = '/NGO-raise-request';
 
   }
   render() {
     return (
       <div>
-        <Navigations></Navigations>
+      
         <br></br>
 
-        {
-       true ?
-        <div className='container'>
+       
+
+
+        {true ?
+          <div className='container'>
+            <NGONavigations></NGONavigations>
             <h4 class="display-4 text-white">Here are all available  medicines.... </h4>
-            
+
             <br></br>
             <div className='row '>
               <table className='table table-striped table-bordered text-white text-center rounded-4'>
@@ -145,51 +143,12 @@ class MedicineListComponent extends Component {
         {/* {this.state.roleForPendingRequest == 'donor' ? <div><button onClick={this.showTable.bind(this)}>See All Pending requests</button>  <button onClick={this.hideTable.bind(this)}>Hide  requests</button></div> : ''} */}
 
 
-        {this.state.showTableFlag == true && this.state.roleForPendingRequest == 'donor' ?
-          <div>
-            <h3>All Pending Request</h3><br></br>
-            <div className="row">
-              <table className="table table-striped table-bordered">
+        
 
-                <thead>
-                  <tr>
-                    <th> Medicine Name</th>
-                    <th> Medicine Type Name</th>
-                    <th> Expriy Date</th>
-                    <th> Quantity</th>
-                    <th> Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    this.state.medicineList.map(
-                      med =>
-                        <tr key={med.id}>
-                          <td> {med.medicineName} </td>
-                          <td> {med.medicineType}</td>
-                          <td> {med.expDate}</td>
-                          <td> {med.medicineQuantity}</td>
-                          <td>
-                            {/* <button onClick={ () => this.editEmployee(med.id)} className="btn btn-info">Update </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(med.id)} className="btn btn-danger">Delete </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(med.id)} className="btn btn-info">View </button> */}
-
-                            sssssssss                                            </td>
-                        </tr>
-                    )
-                  }
-                </tbody>
-              </table>
-
-            </div>
-
-          </div>
-          : ''}
-
-        {this.state.reqRaiseFlag == true ? <RaiseRequestComponent medicineID={this.state.selectedMedicineID}></RaiseRequestComponent> : ''}
-        <Link to='/dashboard'>Back</Link>
+       
+        <Link to='/NGODashboard'>Back</Link>
       </div>
     )
   }
 }
-export default MedicineListComponent
+export default NGOMedicineListComponent

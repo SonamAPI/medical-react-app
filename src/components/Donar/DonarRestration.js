@@ -97,11 +97,12 @@ export default class DonarRestration extends Component {
 
     console.log(DonarpitalObject);
     APICalls.createUser(DonarpitalObject).then(
-      (res)=>
+    
       
-      window.location = '/registerSuccess'
+   
 
     )
+    window.location = '/registerSuccess'
   }
   render() {
 

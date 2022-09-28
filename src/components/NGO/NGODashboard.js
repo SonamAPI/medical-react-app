@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigations from '../User/UserNavigations';
+import NGONavigations from './NGONavigations';
 
 class NGODashboard extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class NGODashboard extends Component {
             <div>
                 <div >
 
-                    <Navigations></Navigations>
+                    <NGONavigations></NGONavigations>
 
 
 
@@ -93,7 +94,7 @@ class NGODashboard extends Component {
 
                                         </div>
                                     </th>
-                                    <th scope="col">
+                                    {/* <th scope="col">
                                         <div className="card bg-danger text-white" style={{
                                             "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
                                             "padding": "16px",
@@ -131,10 +132,11 @@ class NGODashboard extends Component {
                                             <p>See all pending things</p>
 
                                         </div>
-                                    </th>
+                                    </th> */}
                                 </tr><tr>
                                 </tr>
-                                <tr>
+                                
+                                {/* <tr>
                                     <th scope="col">
                                         <div className="card bg-light text-primary" style={{
                                             "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
@@ -143,13 +145,14 @@ class NGODashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createNGO.bind(this)}>
-                                            <h3>Create NGO</h3>
+                                            <h3>Register NGO</h3>
                                             <p>Create A New NGO</p>
 
                                         </div>
                                     </th>
 
-                                </tr>
+                                </tr> */}
+
                                 <tr><th scope="col">
                                     <div className="card bg-primary text-white" style={{
                                         "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",

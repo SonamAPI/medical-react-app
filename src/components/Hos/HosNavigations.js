@@ -22,13 +22,13 @@ export default class HosNavigations extends Component {
                                 </li>
                                 
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/medicines">Medicines</a>
+                                    <a className="nav-link text-white" href="/HosMedicines">Medicines</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/Hos-raise-req">Raise a Request</a>
+                                    <a className="nav-link text-white" href="/Hos-raise-request">Raise a Request</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/Hos-all-request">Raised Request</a>
+                                    <a className="nav-link text-white" href="/Hos-all-requests">Raised Request</a>
                                 </li>
                             </ul>
                             <form className="d-flex">

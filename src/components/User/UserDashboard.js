@@ -93,7 +93,7 @@ class UserDashboard extends Component {
 
                                         </div>
                                     </th>
-                                    <th scope="col">
+                                    {/* <th scope="col">
                                         <div className="card bg-danger text-white" style={{
                                             "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
                                             "padding": "16px",
@@ -131,10 +131,10 @@ class UserDashboard extends Component {
                                             <p>See all pending things</p>
 
                                         </div>
-                                    </th>
+                                    </th> */}
                                 </tr><tr>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th scope="col">
                                         <div className="card bg-light text-primary" style={{
                                             "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
@@ -143,7 +143,7 @@ class UserDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createUser.bind(this)}>
-                                            <h3>Create User</h3>
+                                            <h3>Register User</h3>
                                             <p>Create A New User</p>
 
                                         </div>
@@ -163,7 +163,7 @@ class UserDashboard extends Component {
                                     </div>
                                 </th>
 
-                                </tr>
+                                </tr> */}
                                 <tr></tr>
                             </tbody>
                         </table>

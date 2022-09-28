@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class NGONavigations extends Component {
+ class NGONavigations extends Component {
     logout(e) {
         e.preventDefault();
         window.location = '/login';
@@ -22,13 +22,13 @@ export default class NGONavigations extends Component {
                                 </li>
                                 
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/medicines">Medicines</a>
+                                    <a className="nav-link text-white" href="/NGOMedicines">Medicines</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/NGO-raise-req">Raise a Request</a>
+                                    <a className="nav-link text-white" href="/NGO-raise-request">Raise a Request</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/NGO-all-request">Raised Request</a>
+                                    <a className="nav-link text-white" href="/NGO-all-requests">Raised Request</a>
                                 </li>
                             </ul>
                             <form className="d-flex">
@@ -43,3 +43,5 @@ export default class NGONavigations extends Component {
         )
     }
 }
+
+export default NGONavigations;

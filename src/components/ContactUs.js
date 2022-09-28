@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Navigations from './Navigations';
+import CommonNavigations from './CommonNavigations';
+
+
 
 
 class ContactUs extends Component {
@@ -14,14 +16,18 @@ class ContactUs extends Component {
   render() {
     return (
       <div >
-     <Navigations></Navigations>
+    
+    <CommonNavigations/>
 
 
 
-      <h2 className='text-center'>CONTACT US</h2>
+      <h2 className='text-center text-white'>CONTACT US</h2>
       <br></br><br></br><br></br>
       <div class="row">
-  <div class="col-sm-4"><b>Online Medicine Donation System</b>
+  <div class="col-sm-4">
+  
+  </div>
+  <div class="col-sm-4"> <b>Online Medicine Donation System</b>
   <br></br>
   <p>A Non Profit Organization For Well Being Of The Nation  <br></br>
 Head Office: Cfs patna,India  <br></br>
@@ -29,10 +35,7 @@ Head Office: Cfs patna,India  <br></br>
 Email: info@medicine-donation org  <br></br>
 Web: www.medicine-donation.org  <br></br>
 Support: support@medicine-donation org Marketing: marketing@medicine-donation.org  <br></br>
-</p>
-  
-  </div>
-  <div class="col-sm-4"></div>
+</p></div>
   <div class="col-sm-4"></div>
 </div>
 <br></br><br></br><br></br>
@@ -75,7 +78,7 @@ A: Our system is built to ensure proper heathcare of people. Expired medicines a
 
 
   </div>
-  <div class="col-sm-">.col-sm-4</div>
+  <div class="col-sm-"></div>
 </div>
       
 

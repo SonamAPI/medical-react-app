@@ -116,6 +116,7 @@ class AdminAllApprovedRequests extends Component {
        <AdminNavigations></AdminNavigations>
         <br></br>
         <h2>Approved Request</h2>
+        <div className='container'>
         <div className='row'  style={{"overflow-x":"auto"}}>
           <table className='table table-striped table-bordered'>
             <thead>
@@ -152,7 +153,7 @@ class AdminAllApprovedRequests extends Component {
           </table>
 
           <Link to='/adminDashboard'>Back</Link>
-        </div>
+        </div></div>
       </div>
     )
   }

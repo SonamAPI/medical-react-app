@@ -134,7 +134,7 @@ class HosDashboard extends Component {
                                     </th>
                                 </tr><tr>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th scope="col">
                                         <div className="card bg-light text-primary" style={{
                                             "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
@@ -143,7 +143,7 @@ class HosDashboard extends Component {
                                             "backgroundColor": " #f1f1f1",
                                             "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                         }} onClick={this.createHos.bind(this)}>
-                                            <h3>Create Hos</h3>
+                                            <h3>Register Hospital</h3>
                                             <p>Create A New Hos</p>
 
                                         </div>
@@ -163,7 +163,7 @@ class HosDashboard extends Component {
                                     </div>
                                 </th>
 
-                                </tr>
+                                </tr> */}
                                 <tr></tr>
                             </tbody>
                         </table>

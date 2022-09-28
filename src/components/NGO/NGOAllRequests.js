@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../User/UserNavigations';
+import NGONavigations from './NGONavigations';
 
 class NGOAllRequests extends Component {
   constructor(props) {
@@ -110,7 +111,7 @@ class NGOAllRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+        <NGONavigations></NGONavigations>
 
         <br></br>
         <div className='container text-white'>

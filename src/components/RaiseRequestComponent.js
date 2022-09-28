@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../services/APICalls';
+import HosNavigations from './Hos/HosNavigations';
 
-import Navigations from './Navigations';
+
 export default class RaiseRequestComponent extends Component {
   constructor(props) {
     super(props)
@@ -101,7 +102,7 @@ export default class RaiseRequestComponent extends Component {
   render() {
     return (
       <div>
-        <Navigations></Navigations>
+        <HosNavigations></HosNavigations>
         <br></br>
 
 
@@ -122,7 +123,8 @@ export default class RaiseRequestComponent extends Component {
             <br></br><br></br><h6>Select Id to raise a request: </h6>
               <form className='align-center'>
                 <div className="form-group">
-                  {/* <label htmlFor='optinos'> Select Medicine: </label> */}
+                  
+                  
                   <select id='options'  defaultValue="" value={this.state.selectedMedicineID} onChange={this.getMedicineByID.bind(this)}>
                     {
                       this.state.medicineList.map(

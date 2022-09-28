@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import APICalls from '../../services/APICalls';
 import Navigations from '../User/UserNavigations';
+import NGONavigations from './NGONavigations';
 
 
 class HosAllApprovedRequests extends Component {
@@ -101,7 +102,7 @@ class HosAllApprovedRequests extends Component {
 
     )
 
-    window.location = '/all-request';
+    window.location = '/NGODashboard';
   }
 
 
@@ -112,7 +113,7 @@ class HosAllApprovedRequests extends Component {
     const statusList = ["aa", "dd", "ff"]
     return (
       <div>
-        <Navigations></Navigations>
+        <NGONavigations></NGONavigations>
         <br></br>
         <h2>Approved Request</h2>
         <div className='row'  style={{"overflow-x":"auto"}}>
@@ -150,7 +151,7 @@ class HosAllApprovedRequests extends Component {
             </tbody>
           </table>
 
-          <Link to='/HosDashboard'>Back</Link>
+          <Link to='/NGODashboard'>Back</Link>
         </div>
       </div>
     )

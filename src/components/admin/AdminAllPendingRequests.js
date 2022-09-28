@@ -109,43 +109,47 @@ class AdminAllPendingRequests extends Component {
       <div>
         <AdminNavigations></AdminNavigations>
         <br></br>
-        <h2>Approved Request</h2>
-        <div className='row'  style={{"overflow-x":"auto"}}>
-          <table className='table table-striped table-bordered'>
-            <thead>
-              <tr>
-                <th>Sr. No.</th>
-                <th>Req. ID</th>
-                <th> Medicine Name</th>
-                <th> Medicine Type Name</th>
-                <th> Expriy Date</th>
-                <th> Quantity</th>
-                <th> Role</th>
-                <th> Current status</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              {
-                this.state.medicineList.map(
-                  (med, index) =>
-                    <tr key={index}>
-                      <td> {index + 1} </td>
-                      <td> {med.raiseRequestmedId} </td>
-                      <td> {med.medicineName} </td>
-                      <td> {med.medicineType}</td>
-                      <td> {med.medicineExpiry}</td>
-                      <td> {med.medicineQuantity}</td>
-                      <td> {med.role}</td>
-                      <td> {med.status}</td>
-                      
-                    </tr>
-                )
-              }
-            </tbody>
-          </table>
+        <h2>Pending Request</h2>
+        <div className='container'>
 
-          <Link to='/adminDashboard'>Back</Link>
+          <div className='row' style={{ "overflow-x": "auto" }}>
+            <table className='table table-striped table-bordered'>
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>Req. ID</th>
+                  <th> Medicine Name</th>
+                  <th> Medicine Type Name</th>
+                  <th> Expriy Date</th>
+                  <th> Quantity</th>
+                  <th> Role</th>
+                  <th> Current status</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  this.state.medicineList.map(
+                    (med, index) =>
+                      <tr key={index}>
+                        <td> {index + 1} </td>
+                        <td> {med.raiseRequestmedId} </td>
+                        <td> {med.medicineName} </td>
+                        <td> {med.medicineType}</td>
+                        <td> {med.medicineExpiry}</td>
+                        <td> {med.medicineQuantity}</td>
+                        <td> {med.role}</td>
+                        <td> {med.status}</td>
+
+                      </tr>
+                  )
+                }
+              </tbody>
+            </table>
+
+            <Link to='/adminDashboard'>Back</Link>
+          </div>
+
         </div>
       </div>
     )

@@ -22,11 +22,11 @@ export default class DonarNavigations extends Component {
                                 </li>
                                 
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/medicines">Medicines</a>
+                                    <a className="nav-link text-white" href="/DonarMedicines">Medicines</a>
                                 </li>
                                
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="/Donar-all-requests">Raised Request</a>
+                                    <a className="nav-link text-white" href="/Donar-raise-request">Raised Request</a>
                                 </li>
                                 
 

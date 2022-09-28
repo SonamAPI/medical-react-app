@@ -172,7 +172,7 @@ export default class LoginComponent extends Component {
                                                 "backgroundColor": " #f1f1f1",
                                                 "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                             }} onClick={this.createUser.bind(this)}>
-                                                <h3>Create User</h3>
+                                                <h3>Register User</h3>
                                                 <p>Create A New User</p>
 
                                             </div>
@@ -185,7 +185,7 @@ export default class LoginComponent extends Component {
                                                 "backgroundColor": " #f1f1f1",
                                                 "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                             }} onClick={this.createNGO.bind(this)}>
-                                                <h3>Create NGO</h3>
+                                                <h3>Register NGO</h3>
                                                 <p>Create A New NGO</p>
 
                                             </div>
@@ -200,7 +200,7 @@ export default class LoginComponent extends Component {
                                                 "backgroundColor": " #f1f1f1",
                                                 "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                             }} onClick={this.createHospital.bind(this)}>
-                                                <h3>Create Hospital</h3>
+                                                <h3>Register Hospital</h3>
                                                 <p>Create New Hospital</p>
 
                                             </div>
@@ -213,8 +213,21 @@ export default class LoginComponent extends Component {
                                                 "backgroundColor": " #f1f1f1",
                                                 "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
                                             }} onClick={this.createDonar.bind(this)}>
-                                                <h3>Create Donar</h3>
+                                                <h3>Register Donar</h3>
                                                 <p>Create New Donar</p>
+
+                                            </div>
+                                        </th>
+                                        <th scope="col">
+                                            <div className="card bg-light text-danger" style={{
+                                                "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+                                                "padding": "16px",
+                                                "textAlign": "center",
+                                                "backgroundColor": " #f1f1f1",
+                                                "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)"
+                                            }} onClick={this.createAdmin.bind(this)}>
+                                                <h3>Register Admin</h3>
+                                                <p>Create A New Admin</p>
 
                                             </div>
                                         </th>
@@ -241,7 +254,7 @@ export default class LoginComponent extends Component {
                                             <br></br>
                                             <div className="form-group">
                                                 <label> Enter Password : </label>
-                                                <input placeholder="Password" name="Password" className="form-control" value={this.state.password} onChange={this.chanePassword.bind(this)} />
+                                                <input placeholder="Password" name="Password" type="password" className="form-control" value={this.state.password} onChange={this.chanePassword.bind(this)} />
                                             </div><br></br>
                                             <br></br>
                                             <button className="btn btn-outline-primary text-center" onClick={this.submitDataF.bind(this)}>Log In</button>
@@ -269,7 +282,7 @@ export default class LoginComponent extends Component {
 
         }
 
-        if (resposneMessage === 'success'&& resposneRole ==='user') {
+        if (resposneMessage === 'success'&& (resposneRole ==='user' || resposneRole ==='User')) {
             this.setState({
                 showLoginPage: false
             })
@@ -289,7 +302,7 @@ export default class LoginComponent extends Component {
             </div>;
         }
 
-        if (resposneMessage === 'success'&& resposneRole ==='ngo') {
+        if (resposneMessage === 'success'&& (resposneRole ==='NGO' || resposneRole ==='ngo')) {
             this.setState({
                 showLoginPage: false
             })
@@ -307,7 +320,7 @@ export default class LoginComponent extends Component {
               <HosDashboard></HosDashboard>
             </div>;
         }
-        if (resposneMessage === 'success'&& resposneRole ==='donar') {
+        if (resposneMessage === 'success'&& (resposneRole ==='donar' || resposneRole ==='Donar')) {
             this.setState({
                 showLoginPage: false
             })
